@@ -64,13 +64,8 @@ static void cpuid(      unsigned int *eax,
 		);
 }
 
-#endif
-
-
-void print_intel_cstates(void)
+void print_cstates(void)
 {
-#ifdef __i386__ 
-
         int bios_table[8];
         int bioscount = 0;
 	DIR *cpudir;
@@ -154,5 +149,5 @@ void print_intel_cstates(void)
 		if (bios_table[i])
 			printf("C%i ", i);
 	printf("\n");
-#endif
 }
+#endif
